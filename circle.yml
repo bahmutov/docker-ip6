@@ -10,5 +10,5 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Starting ip6 server
-          command: node index.js
+          name: Testing ip6 server
+          command: npm test
