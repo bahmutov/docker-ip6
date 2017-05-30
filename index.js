@@ -4,6 +4,8 @@ const server = http.createServer((req, res) => {
   res.writeHead(200)
   res.end()
 })
-server.listen(6500, '::1', () => {
-  console.log('listening at ip6 :6500')
+const ip = 'localhost'
+const port = 6500
+server.listen(port, ip, () => {
+  console.log('listening at %s:%d', ip, port)
 })
