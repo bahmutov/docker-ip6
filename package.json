@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node .",
+    "call": "curl localhost:6500",
+    "precall": "sleep 2",
+    "test": "run-p --race start call",
+    "build": "docker build -t gleb/docker-ip6 .",
+    "prerun": "docker rm ip6 || true",
+    "run": "docker run --name ip6 -p 6500:6500 -it gleb/docker-ip6 /bin/bash"
   },
   "repository": {
     "type": "git",
