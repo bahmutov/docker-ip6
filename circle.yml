@@ -10,5 +10,8 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Installing NPM dependencies
+          command: npm install
+      - run:
           name: Testing ip6 server
           command: npm test
